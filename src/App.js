@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <Form />
-      <h1>Test</h1>
+      <h1>Meme Image here</h1>
     </div>
   );
 }

@@ -1,21 +1,33 @@
 import React from "react";
+import "./memeData";
 import "./Form.css";
-
+import memeData from "./memeData";
 
 export default function Form() {
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Clicked!")
+    const response = memeData.data.memes;
+    const randomMeme = Math.floor(Math.random() * response.length);
+    const { url } = response[randomMeme];
+    console.log(url);
   }
-  
-    return (
+
+  return (
     <form onSubmit={handleSubmit} className="page--form">
-      <label>
-        <input type="text" id="form--first"></input>
+      <label className="first--input">
+        <input
+          type="text"
+          placeholder="Top text"
+          className="form--first"
+        ></input>
       </label>
 
-      <label>
-        <input type="text" id="form--second"></input>
+      <label className="second--input">
+        <input
+          type="text"
+          placeholder="Bottom text"
+          className="form--second"
+        ></input>
       </label>
       <button type="submit" className="form--button">
         Generate new image
